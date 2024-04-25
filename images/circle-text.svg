@@ -1,0 +1,14 @@
+<svg width="250" height="250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="purple"/>
+      <stop offset="100%" stop-color="gold"/>
+    </linearGradient>
+  </defs>
+  <g transform="rotate(-15,125,125)">
+    <path id="circle" d="M125,25 a95,95 0 1,0 0,190" />
+    <path id="textPath" d="M125,25 a95,95 0 1,1 0,190" />
+    <text><textPath href="#textPath" startOffset="12"><tspan dy=".4em">Круговорот событий</tspan></textPath>
+    </text>
+  </g>
+</svg>

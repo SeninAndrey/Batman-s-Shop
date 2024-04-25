@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script defer src="./main.js"></script>
+    <title>Batman`s shop</title>
+</head>
+
+<!-- 19.04 - 2часа -->
+<!-- 20.04 - 6часа -->
+<!-- 21.04 - 2часа -->
+<!-- 22.04 - 3часа -->
+<!-- 23.04 - 4часа -->
+
+<body class="noScroll">
+    <header class="header">
+        <div class="header__container container">
+            <nav class="header__nav nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <button class="nav__button">Каталог</button></li>
+                    <li class="nav__item">
+                        <button class="nav__button">О Бетмене</button></li>
+                    <li class="nav__item">
+                        <button class="nav__button">Акции</button></li>
+                </ul>
+            </nav>
+            <a class="header__link"  href="tel:+7-900-123-55-45">+7 900 123 55 45</a>
+            <a class="header__link"  href="mailto:Batman@gmail.com">Batman@gmail.com</a>
+            <div class="header__socials socials">
+                <a class="socials__inst socials__link" href="#">
+                    <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="33" height="33" fill="url(#pattern0_26_1949)"/>
+                        <defs>
+                        <pattern id="pattern0_26_1949" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_26_1949" transform="scale(0.0111111)"/>
+                        </pattern>
+                        <image id="image0_26_1949" width="90" height="90" xlink:href="data:image/png;base64,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"/>
+                        </defs>
+                    </svg>
+                </a>
+                <a class="socials__telegram socials__link" href="#">
+                    <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="33" height="33" fill="url(#pattern0_26_1950)"/>
+                        <defs>
+                        <pattern id="pattern0_26_1950" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_26_1950" transform="scale(0.0111111)"/>
+                        </pattern>
+                        <image id="image0_26_1950" width="90" height="90" xlink:href="data:image/png;base64,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"/>
+                        </defs>
+                    </svg>
+                </a>
+                <a class="socials__mail socials__link" href="#">
+                    <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="33" height="33" fill="url(#pattern0_26_1951)"/>
+                        <defs>
+                        <pattern id="pattern0_26_1951" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_26_1951" transform="scale(0.0111111)"/>
+                        </pattern>
+                        <image id="image0_26_1951" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAADfUlEQVR4nO2aP2jWQBiHqxYVRPAfWHCx4OIiiDo46aK2Uic3FQdH3VwcdBKHDiIODgqigjqJg0666CSKLjrooEIFB0GhoBT7VWofOUihfLZ37+XukkvyPlD44Evy5p5e3lx+XwYGFEVRFEVRFEVRFEVRFEVRFEVRlIgA64AXKC7eAJtCZa8BnjpLdZfnwNpYM3sl8KDuEWXIY2B1GaHLLN+tAG7XPbKMuAMMlnFpvrzr2hm4XPcIM+AasNwxKW/aRIsuB+Ac3WVc2mZdokUNHjgN/KU7zAFnfRYOEtGiJQtwDPhD+5kFTjlcrO9fCktFG94DWxwFxoDftJcecNThYAh427+jj2jDBLDNUWgf8JP2MQUccIx9K/BpsZ19RRu+ATscBXcBP2gPk8Bex5i3A1+XOkAZ0VEKNwjJxNrtmlhlRc9fSgcFl9JHmsuEoFXul7TKENGGGcHNYfNiN4cGILn5HwGmJQcLFS1d7jQt+XstWM4e91nOxhDts4B/Qv5IHtDO+D6gxRLt/UiaKckih9iixSEL+ZE0REshOvlJJyD55EgluknJ33gV7S6l6NyTvznfBC5n0bkmf7NlErjcRRs+ZJT89YQJ3LuYRasSnUvyNxWSwDVFdN3J32SdQVjVousacJQErmmie8CobdBF/WHgc4R65hjDgnqjxbm1QvSMSbxcg46Y/DkTuL56h6RpXM6ivSRHSP6cCVyVsm0Fa5cckPw9C3kHLoVsW7HKejJwGDjv2GYV8FBQz2yzynGsC8BIlT07tWip5F6x/RXBO383LPWum20cYdbVYtvpKmWnFO0reZ5bNlkLfkIyGcT34s98HnPsM1i8jLiQymSnEu3sycCIpQ8+KvUKbLkETnKuwT3bdvC6JEe5oXkmcMll2w5cZbtYipcmRQuQvAF4hYxpwbmXbiMxRceayf18AfaUkLyzxJNlspkdS3TsmdyPiU8vmhkqELwRuBRwmSeZ2TFEp5a8EBOh3gNOmJCoyI2His8ngfvAL8KJLjtUdKp2kQNR20iI6DZLji67rOguSI4qu4zoShb4mRE8Zl/RXZQcZew+orssOdiBVLRKDnQhEa2S/8fbiUu0Sl4aLze2jVSyG7Ej2wbJkqyWIXpct33v/C/VPcKMCPrxWSXXJVtncgWyVXKNbURRFEVRFEVRFEVRFEVRFEVRFGWg6/wD7sRajdPD5fUAAAAASUVORK5CYII="/>
+                        </defs>
+                    </svg>
+                </a>
+            </div>
+        </div> 
+    </header>
+
+    <main>
+        <div class="modal modal--show" id="modal">
+            <div class="modal__window">
+                <h2 class="modal__title">
+                    Сайт запрещено посещать злодеям
+                </h2>
+                <p class="modal__description">
+                    Нажимая эту кнопку, вы даете согласие на обработку данных и подтверждение того, что вы не злодей и имеете благие намерения.
+                </p>
+                <div class="modal__controls">
+                    <button class="modal__accept modal__btn">Согласен</button>
+                    <button class="modal__cancel modal__btn">Нет, я злодей</button>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="hero">
+            <div class="hero__container container">
+                <div class="hero__content">
+                    <h1 class="hero__title">ТЫ - НОВЫЙ ТЕМНЫЙ РЫЦАРЬ</h1>
+                    <p class="hero__description">Готов сражаться с злыми силами города?</p>
+                    <button class="hero__btn">Каталог</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="about__container container">
+                <div class="about__main">
+                    <h3 class="about__title">
+                        Добро пожаловать на сайт каталога Бэтмена
+                    </h3>
+                    <p class="about__description">
+                        Наш герой решил выйти на заслуженный покой. Вы можете приобрести его эксклюзивный и уникальный арсенал.
+                    </p>
+                    <p class="about__description">
+                        Наш разнообразный ассортимент, включает в себя широкий выбор боевых доспехов, оружия и гаджетов, которые подойдут как для настоящих поклонников Бэтмена, так и для коллекционеров или любителей экстремальных развлечений.
+                    </p>
+                    <p class="about__description">
+                        Наш каталог предлагает вам возможность оценить каждую деталь и характеристику предметов, чтобы вы могли выбрать идеальное дополнение для вашей коллекции или использовать их для осуществления благородных целей.
+                    </p>
+                </div>
+                
+                <ul class="about__advantages">
+                    <li class="about__card advantage">
+                        <svg class="advantage__icon" width="55" height="54" viewBox="0 0 55 54" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect x="0.5" width="54" height="54" fill="url(#pattern0_15_456)"/>
+                            <defs>
+                            <pattern id="pattern0_15_456" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_15_456" transform="scale(0.0111111)"/>
+                            </pattern>
+                            <image id="image0_15_456" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD5klEQVR4nO2cS2sUQRDHO4J5eMjNBJ8QvenRB1FBEPE75OAH8KKCIYqvixeNgohR9C540ODBgyYeg/i4KfgZoqKoYFZRE3/SWIEQMjvdMz2dntn6wbIwdNdU/7ep7pqeWmMURVEURVEURVEURVEURVGU5QC9wEngNTBH2swBr4ATQE9tfk1gM/CWevLG+m9qMpPrKvJSsdOe2RIumsBxkzISk5vAS5MywHeawXeTMjQIkzI0CJMyNAiTMgHHOQ/MAKPAMDAArJXPgFwblTa2bXBMygQY3w/gihXT454DwLj0DYZJmZJje9guKwPW5Nx7CzAZSOdGCr0AnAO6Mmz2AbeAb/KZsNcy2nYB58Vmanyx+3PgmM2gYwttBRnJsXljhX7Xc/qMJCr20jR/Y0yhzznY/LBCv/cO/ezMTpl3QHcMoR9mhQsXmya/X1fImF0RY1UL/dMuXmVsGre+m4AW6fKx0JNCjxtcLmvTuPe/StocrUroec998op49B9chYXxF3C61IJXRJRlzISwafxsPCcuZ7zF8xyQC6dC2DR+NsaIywZv8TwH5MJwCJvGz8YBImKqxtGP9YFs9njG6WiYqnH0w2uT3sbOlGsqa38UIlJYwACilBF6tqzYnSq0b+i4nGPvSZ7YnRo69nna7BEx2zGRY6MjF8PRAna7gcc5CULm4ijJQzRKC+kgSPCEZdlbUE8zbNrMrz+VhKWUiI5iBE/BHcWeSikFLyWioxCujJe4R6+cuPwG/gLT7Z4pANeITGEBPUQI/pg0J27357TZKveKSplxuQ7eh0mXB/8lfOkCHrEKVDWmpYPz5XyFvlyk5kQ9nC0o8kjih7PRhUYWtCshwgj/w8WZJohchdBLY3bhBZL/C9+qxOS6CY3sEOwZ36CHwIOyhYu+u6iz0IssSDZnT0b2i5jd8hmUa2PSphFhYrWEVlCho6EzOhIqdCRU6Eio0JFQoSOhQkdChY7E8iRlHXBb6kvKYkuczwJDUuo2JPUtc9SD0P5/ldOkPiv03YBO7srIOHfXQOwq/b9rAtb3nc15eHSBtKnS/1ZIoYdyHN1O2lTpfytk6OhO6f25xPy/s1hwOSGBuww6o1cuAr2ZVcDaFuAZBWoOyT5snTYRqY3/bRYFuyrvyeizt00ZW25RaEf6L3vL+TbO2oFsk9OU7TITWhnt/9izwkocbYL/wH3CcK8yJ5vgv30ZXapGy/DJ5xC3Y/0HDpXYg7eAg5U72RT/gSPA5wIz4bBJgFr5L/9lOunw2sAC8MAW0puEqJ3/wE7gkvxLy6y8/2y/X8j1HSZh6u6/oiiKoiiKoiiKoiiKicg/uYQMryfNTC8AAAAASUVORK5CYII="/>
+                            </defs>
+                        </svg>                        
+                        <h4 class="advantage__title">Доставка</h4>
+                        <p class="advantage__description">Удобно и безопасно</p>
+                    </li>
+                    <li class="about__card advantage">
+                        <svg class="advantage__icon" width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="54" height="54" fill="url(#pattern0_15_462)"/>
+                            <defs>
+                            <pattern id="pattern0_15_462" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_15_462" transform="scale(0.0111111)"/>
+                            </pattern>
+                            <image id="image0_15_462" width="90" height="90" xlink:href="data:image/png;base64,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"/>
+                            </defs>
+                        </svg>                        
+                        <h4 class="advantage__title">Акции</h4>
+                        <p class="advantage__description">Сэкономить и получить бонусы</p>
+                    </li>
+                    <li class="about__card advantage">
+                        <h5 class="advantage__circle">
+                            <span class="advantage__char1">д</span>
+                            <span class="advantage__char2">л</span>
+                            <span class="advantage__char3">я</span>
+                            <span class="advantage__char4">л</span>
+                            <span class="advantage__char5">у</span>
+                            <span class="advantage__char6">ч</span>
+                            <span class="advantage__char7">ш</span>
+                            <span class="advantage__char8">и</span>
+                            <span class="advantage__char9">х</span>
+                            <span class="advantage__char10">c</span>
+                            <span class="advantage__char11">у</span>
+                            <span class="advantage__char12">п</span>
+                            <span class="advantage__char13">е</span>
+                            <span class="advantage__char14">р</span>
+                            <span class="advantage__char15">г</span>
+                            <span class="advantage__char16">е</span>
+                            <span class="advantage__char17">р</span>
+                            <span class="advantage__char18">о</span>
+                            <span class="advantage__char19">е</span>
+                            <span class="advantage__char20">в</span>
+                        </h5>
+                        <svg class="advantage__icon" width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="54" height="54" fill="url(#pattern0_15_461)"/>
+                            <defs>
+                            <pattern id="pattern0_15_461" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_15_461" transform="scale(0.0111111)"/>
+                            </pattern>
+                            <image id="image0_15_461" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEaElEQVR4nO2cX4gXVRTHx9I0I5SSJLOgHkwsw0gfLB+KWpH+KakPGRREDwYiQg9h+qCIUIakmFhQlBhRFKJRlBFkD6LVZhpBiVqSGtn6tz+rpu0nbp7IbH+7c2fOvXNnPB9YWH6wc77nu/O7c+fcc2+WGYZhGIZhGIZhGIZhGIZhGGUBRgErgG+A48Cv8vsLwC3mcHmDLwAWAqdozZ/yTxhghhcz+RLgHfLzOTDczPa/k9fhz4/AzWZ2fqOXUpyjwO1mdu8mT6U8vwBjzezWJl8OdKDDAXe92GYDlwEPAs8DG4EfgCOi6XfgJ/n8OaAN6JtVINIF12RKRO23AWuBk54a9wCzohkOXCFzZE3uiqD7KjG4LNuAEVkEwfPQ5QQwKLDmO4CfFTW7B/mtWWDR29HllcB6Jwb4BjqOATeEEn2NstgOYGgQsWf0XgscIhw7gP4hhM9QFNkFTFYX+a/WfsBWwjM3hPhnPUxcLA8f93t3dY9Z6gL/q/VR4uAKZ8O0xa/PGXzLWX9zkxuHpYq3V+oiE1SF/V9nX2AX8ZivncBnOQMvVw3sCXAncdkJ9NFMwN2VeVisFjTsEKfJOM0E9uUMukotaAHc0EV8Zmsm4OaOefhALWgB5FkQmzWaCZzOGdQVZ/qpBfZE3jZj84VmAr95BG5TC+wJcJj4fK+ZgCtp5mWtWmBPgG+Jz1HNBHZ7BHbDzGi14B4AnxCfI1UWlDaqzi9zAqwkPrs1E3ivgIAn1QTkBHiM+HyomYDry/DF9XpMUhOR/a1jADAeeET6SZ6Wn0VuPgssID7PaCY4p6CIzrKzEM7UL6bKt8qt6aXGRE2j7y8hpBO4t2Dc+yIXiXxx7w0XaRp9Y0lBf7iatke8/sCLpM8KNZMl8YEeb4c9jdmTc5r8PunjausjVY0WA75WENfZW7ULeI168JK6yWLAq0oC97RqnKloela00+rKUEa7JhItXu/m+kMqqlUUYV4Qk8WIMcpi2865fhVz4CJsDbICfk6rrlbfnaP9n9d06bU+SPq4Bdnrg5l8ltlvKQufLtd9iHrwcHCTxZCZysK/cnc18DbpsyyKyWL08Bb9GmWY5LFUVhVvuqEzmtFi9qfKSewibT4K+vDrwei5nD9sAC6ObrIYPZLzg3WVb9kLMHykxnLgwkpNFqMfp7nszVLBdepLgaiJvJylBPAGzeSBLCVkl1PTOFDJVK43gM00iwVZigDTaA4n1Dv4tZA6xcc0gyVZysgWip7O66gD+4HBWepU1GmvyT1ZHZAtZ3V9MC7J6gRwnWzhrRPrk3jV9gW4u0bj9btJzpnzUpOWgdWqrVxVATxFmhx3y3FZkwCeCLDsVXalRL+FKwVkX/ZJqqNL+viCH8BSOe4gEVrv/+uSM402yQkvWou0X0pzejPv4FYAl8pLjTsY6ju3CVKOphjaTZPOGGlrWCozg3bZrLRPWsZOS12iQz5vl34T1+k0Hbi6ukwNwzAMwzAMwzAMwzAMwzCMrHv+AooQsOrtLce4AAAAAElFTkSuQmCC"/>
+                            </defs>
+                        </svg>   
+
+                        
+                           
+                        <!-- <svg class="rotateText" xmlns="http://www.w3.org/2000/svg" 
+                            xmlns:xlink="http://www.w3.org/1999/xlink" 
+                            width="200" 
+                            height="200">                       
+                      
+                        <defs>
+                            <path d="M5,52.5a50,50 0 1,0 100,0a50,50 0 1,0 -100,0" id="textcircle" />
+                            <style>
+                                text { 
+                                    fill: #ecb426;
+                                    font-size: 12px;
+                                    font-weight: 700; 
+                                    letter-spacing: 6px;
+                                }
+                            </style>
+                        </defs> 
+                            <text>
+                                <textPath xlink:href="#textcircle">
+                                    для лучших супергероев   
+                                </textPath>
+                            </text>
+                        </svg>     -->
+                         
+                        <h4 class="advantage__title">Проверенно</h4>
+                        <p class="advantage__description">Для благородных целей</p>
+                    </li>
+                </ul>
+                <article class="about__banner banner">
+                    <h3 class="banner__title">
+                        ПОЛУЧИ ПОДАРОК ПРЯМО СЕЙЧАС
+                    </h3>
+                    <p class="banner__description">
+                        Дарми 1 год бесплатного обслуживания Бет-мобиля и бесплатное оформление ОСАГО
+                    </p>
+                    <div class="banner__controls">
+                        <div class="banner__timer timer">
+                            <p class="timer__text">До конца акции</p>
+                            <div class="timer__time"></div>
+                        </div>
+                        <button class="banner__catalog">каталог</button>
+                        <button class="banner__more">подробно</button>
+                    </div>
+                    <p class="banner__note">
+                        *Примечание: Весь арсенал Бэтмена является лишь репликой, созданной в развлекательных целях, и не предназначен для реального использования или применения. Пожалуйста, соблюдайте законы и правила вашей страны при использовании арсенала или его элементов.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="catalog">
+            <div class="catalog__container ">
+                <div class="catalog__sale sale">
+                    <h2 class="catalog__title">Распродажа</h2>
+                    <swiper-container slides-per-view="5" loop="true" class="sale__slider slider">
+                        <swiper-slide class="sale__card card sale__suite sale__card--hit">
+                            <div class="card__header">
+                                <div class="card__price">100000$</div>
+                                <button class="card__favorites"></button>
+                            </div>
+                            <h5 class="card__title">Костюм «Черного Рыцаря»</h5>
+                            <p class="card__description">
+                                Высокотехнологичный костюм из прочного нанополимерного материала, обеспечивающий превосходную защиту от снарядов, огня и тяжелых ударов.
+                            </p>
+                            <button class="card__button">Купить</button>
+                        </swiper-slide>
+                        <swiper-slide class="sale__card sale__car card">
+                            <div class="card__header">
+                                <div class="card__price">9 800 000 000$</div>
+                                <button class="card__favorites"></button>
+                            </div>
+                            <h5 class="card__title">Бэт-мобиль</h5>
+                            <p class="card__description">
+                                Вооружен передовыми ракетами, машинными пулеметами и электрошоковыми генераторами для эффективной борьбы с преступностью
+                            </p>
+                            <button class="card__button">Купить</button>
+                        </swiper-slide>
+                        <swiper-slide class="sale__card sale__gun card">
+                            <div class="card__header">
+                                <div class="card__price">6999$</div>
+                                <button class="card__favorites"></button>
+                            </div>
+                            <h5 class="card__title">Бет-ган</h5>
+                            <p class="card__description">
+                                Возможность локализации цели и точного попадания благодаря встроенному системе слежения и управления.
+                            </p>
+                            <button class="card__button">Купить</button>
+                        </swiper-slide>
+                        <swiper-slide class="sale__card card sale__suite sale__card--hit">
+                            <div class="card__header">
+                                <div class="card__price">100000$</div>
+                                <button class="card__favorites"></button>
+                            </div>
+                            <h5 class="card__title">Костюм «Черного Рыцаря»</h5>
+                            <p class="card__description">
+                                Высокотехнологичный костюм из прочного нанополимерного материала, обеспечивающий превосходную защиту от снарядов, огня и тяжелых ударов.
+                            </p>
+                            <button class="card__button">Купить</button>
+                        </swiper-slide>
+                        <swiper-slide class="sale__card sale__car card">
+                            <div class="card__header">
+                                <div class="card__price">9 800 000 000$</div>
+                                <button class="card__favorites"></button>
+                            </div>
+                            <h5 class="card__title">Бэт-мобиль</h5>
+                            <p class="card__description">
+                                Вооружен передовыми ракетами, машинными пулеметами и электрошоковыми генераторами для эффективной борьбы с преступностью
+                            </p>
+                            <button class="card__button">Купить</button>
+                        </swiper-slide>
+                        <swiper-slide class="sale__card sale__gun card">
+                            <div class="card__header">
+                                <div class="card__price">6999$</div>
+                                <button class="card__favorites"></button>
+                            </div>
+                            <h5 class="card__title">Бет-ган</h5>
+                            <p class="card__description">
+                                Возможность локализации цели и точного попадания благодаря встроенному системе слежения и управления.
+                            </p>
+                            <button class="card__button">Купить</button>
+                        </swiper-slide>
+                        <swiper-slide class="sale__card card sale__suite sale__card--hit">
+                            <div class="card__header">
+                                <div class="card__price">100000$</div>
+                                <button class="card__favorites"></button>
+                            </div>
+                            <h5 class="card__title">Костюм «Черного Рыцаря»</h5>
+                            <p class="card__description">
+                                Высокотехнологичный костюм из прочного нанополимерного материала, обеспечивающий превосходную защиту от снарядов, огня и тяжелых ударов.
+                            </p>
+                            <button class="card__button">Купить</button>
+                        </swiper-slide>
+                        <swiper-slide class="sale__card sale__car card">
+                            <div class="card__header">
+                                <div class="card__price">9 800 000 000$</div>
+                                <button class="card__favorites"></button>
+                            </div>
+                            <h5 class="card__title">Бэт-мобиль</h5>
+                            <p class="card__description">
+                                Вооружен передовыми ракетами, машинными пулеметами и электрошоковыми генераторами для эффективной борьбы с преступностью
+                            </p>
+                            <button class="card__button">Купить</button>
+                        </swiper-slide>
+                        <swiper-slide class="sale__card sale__gun card">
+                            <div class="card__header">
+                                <div class="card__price">6999$</div>
+                                <button class="card__favorites"></button>
+                            </div>
+                            <h5 class="card__title">Бет-ган</h5>
+                            <p class="card__description">
+                                Возможность локализации цели и точного попадания благодаря встроенному системе слежения и управления.
+                            </p>
+                            <button class="card__button">Купить</button>
+                        </swiper-slide>
+                    </swiper-container>
+                </div>
+
+                <div class="catalog__daily daily">
+                    <h2 class="catalog__title">Повседневные</h2>
+                    <swiper-container slides-per-view="5" loop="true" class="daily__slider slider">
+                        <swiper-slide class="daily__card card daily__suite daily__card--hit">
+                            <div class="card__header">
+                                <div class="card__price">100000$</div>
+                                <button class="card__favorites"></button>
+                            </div>
+                            <h5 class="card__title">Костюм «Черного Рыцаря»</h5>
+                            <p class="card__description">
+                                Высокотехнологичный костюм из прочного нанополимерного материала, обеспечивающий превосходную защиту от снарядов, огня и тяжелых ударов.
+                            </p>
+                            <button class="card__button">Купить</button>
+                        </swiper-slide>
+                        <swiper-slide class="daily__card daily__car card">
+                            <div class="card__header">
+                                <div class="card__price">9 800 000 000$</div>
+                                <button class="card__favorites"></button>
+                            </div>
+                            <h5 class="card__title">Бэт-мобиль</h5>
+                            <p class="card__description">
+                                Вооружен передовыми ракетами, машинными пулеметами и электрошоковыми генераторами для эффективной борьбы с преступностью
+                            </p>
+                            <button class="card__button">Купить</button>
+                        </swiper-slide>
+                        <swiper-slide class="daily__card daily__gun card">
+                            <div class="card__header">
+                                <div class="card__price">6999$</div>
+                                <button class="card__favorites"></button>
+                            </div>
+                            <h5 class="card__title">Бет-ган</h5>
+                            <p class="card__description">
+                                Возможность локализации цели и точного попадания благодаря встроенному системе слежения и управления.
+                            </p>
+                            <button class="card__button">Купить</button>
+                        </swiper-slide>
+                        <swiper-slide class="daily__card card daily__suite daily__card--hit">
+                            <div class="card__header">
+                                <div class="card__price">100000$</div>
+                                <button class="card__favorites"></button>
+                            </div>
+                            <h5 class="card__title">Костюм «Черного Рыцаря»</h5>
+                            <p class="card__description">
+                                Высокотехнологичный костюм из прочного нанополимерного материала, обеспечивающий превосходную защиту от снарядов, огня и тяжелых ударов.
+                            </p>
+                            <button class="card__button">Купить</button>
+                        </swiper-slide>
+                        <swiper-slide class="daily__card daily__car card">
+                            <div class="card__header">
+                                <div class="card__price">9 800 000 000$</div>
+                                <button class="card__favorites"></button>
+                            </div>
+                            <h5 class="card__title">Бэт-мобиль</h5>
+                            <p class="card__description">
+                                Вооружен передовыми ракетами, машинными пулеметами и электрошоковыми генераторами для эффективной борьбы с преступностью
+                            </p>
+                            <button class="card__button">Купить</button>
+                        </swiper-slide>
+                        <swiper-slide class="daily__card daily__gun card">
+                            <div class="card__header">
+                                <div class="card__price">6999$</div>
+                                <button class="card__favorites"></button>
+                            </div>
+                            <h5 class="card__title">Бет-ган</h5>
+                            <p class="card__description">
+                                Возможность локализации цели и точного попадания благодаря встроенному системе слежения и управления.
+                            </p>
+                            <button class="card__button">Купить</button>
+                        </swiper-slide>
+                        <swiper-slide class="daily__card card daily__suite daily__card--hit">
+                            <div class="card__header">
+                                <div class="card__price">100000$</div>
+                                <button class="card__favorites"></button>
+                            </div>
+                            <h5 class="card__title">Костюм «Черного Рыцаря»</h5>
+                            <p class="card__description">
+                                Высокотехнологичный костюм из прочного нанополимерного материала, обеспечивающий превосходную защиту от снарядов, огня и тяжелых ударов.
+                            </p>
+                            <button class="card__button">Купить</button>
+                        </swiper-slide>
+                        <swiper-slide class="daily__card daily__car card">
+                            <div class="card__header">
+                                <div class="card__price">9 800 000 000$</div>
+                                <button class="card__favorites"></button>
+                            </div>
+                            <h5 class="card__title">Бэт-мобиль</h5>
+                            <p class="card__description">
+                                Вооружен передовыми ракетами, машинными пулеметами и электрошоковыми генераторами для эффективной борьбы с преступностью
+                            </p>
+                            <button class="card__button">Купить</button>
+                        </swiper-slide>
+                        <swiper-slide class="daily__card daily__gun card">
+                            <div class="card__header">
+                                <div class="card__price">6999$</div>
+                                <button class="card__favorites"></button>
+                            </div>
+                            <h5 class="card__title">Бет-ган</h5>
+                            <p class="card__description">
+                                Возможность локализации цели и точного попадания благодаря встроенному системе слежения и управления.
+                            </p>
+                            <button class="card__button">Купить</button>
+                        </swiper-slide>
+                    </swiper-container>
+                </div>
+            </div>
+        </section>
+        
+        <section class="consult">
+            <div class="consult__container container">
+                <div class="consult__content">
+                    <div class="consult__helper">
+                        <h3 class="consult__title">Поможем в выборе!</h3>
+                        <p class="consult__description">
+                            Если у вас есть вопросы, или не знаете, что выбрать - оставьте номер телефона, мы вам перезвоним!
+                        </p>
+                    </div>
+                    <form action="#" class="consult__form">
+                        <input type="text" class="consult__input" placeholder="+7 999 883 8828">
+                        <input type="text" class="consult__input" placeholder="Имя">
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__description">
+                <p class="footer__paragraph">
+                    Lorem ipsum dolor sit amet consectetur. Semper vulputate congue nibh tincidunt. Adipiscing lobortis blandit sed commodo et egestas vitae. 
+                </p>
+                <p class="footer__paragraph">
+                    Quis diam blandit non et quam cursus tristique fringilla cras. Quis leo 
+                </p>
+                <p class="footer__paragraph">
+                    augue volutpat proin ut in sit tincidunt. Risus sodales in quis quis mauris aliquet velit eget urna. Pulvinar bibendum suscipit vitae faucibus sed phasellus sapien.    
+                </p>
+            </div>
+            <div class="footer__socials socials">
+                <a class="socials__inst socials__link" href="#">
+                    <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="33" height="33" fill="url(#pattern0_26_1949)"/>
+                        <defs>
+                        <pattern id="pattern0_26_1949" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_26_1949" transform="scale(0.0111111)"/>
+                        </pattern>
+                        <image id="image0_26_1949" width="90" height="90" xlink:href="data:image/png;base64,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"/>
+                        </defs>
+                    </svg>
+                </a>
+                <a class="socials__telegram socials__link" href="#">
+                    <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="33" height="33" fill="url(#pattern0_26_1950)"/>
+                        <defs>
+                        <pattern id="pattern0_26_1950" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_26_1950" transform="scale(0.0111111)"/>
+                        </pattern>
+                        <image id="image0_26_1950" width="90" height="90" xlink:href="data:image/png;base64,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"/>
+                        </defs>
+                    </svg>
+                </a>
+                <a class="socials__mail socials__link" href="#">
+                    <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="33" height="33" fill="url(#pattern0_26_1951)"/>
+                        <defs>
+                        <pattern id="pattern0_26_1951" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_26_1951" transform="scale(0.0111111)"/>
+                        </pattern>
+                        <image id="image0_26_1951" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAADfUlEQVR4nO2aP2jWQBiHqxYVRPAfWHCx4OIiiDo46aK2Uic3FQdH3VwcdBKHDiIODgqigjqJg0666CSKLjrooEIFB0GhoBT7VWofOUihfLZ37+XukkvyPlD44Evy5p5e3lx+XwYGFEVRFEVRFEVRFEVRFEVRFEVRlIgA64AXKC7eAJtCZa8BnjpLdZfnwNpYM3sl8KDuEWXIY2B1GaHLLN+tAG7XPbKMuAMMlnFpvrzr2hm4XPcIM+AasNwxKW/aRIsuB+Ac3WVc2mZdokUNHjgN/KU7zAFnfRYOEtGiJQtwDPhD+5kFTjlcrO9fCktFG94DWxwFxoDftJcecNThYAh427+jj2jDBLDNUWgf8JP2MQUccIx9K/BpsZ19RRu+ATscBXcBP2gPk8Bex5i3A1+XOkAZ0VEKNwjJxNrtmlhlRc9fSgcFl9JHmsuEoFXul7TKENGGGcHNYfNiN4cGILn5HwGmJQcLFS1d7jQt+XstWM4e91nOxhDts4B/Qv5IHtDO+D6gxRLt/UiaKckih9iixSEL+ZE0REshOvlJJyD55EgluknJ33gV7S6l6NyTvznfBC5n0bkmf7NlErjcRRs+ZJT89YQJ3LuYRasSnUvyNxWSwDVFdN3J32SdQVjVousacJQErmmie8CobdBF/WHgc4R65hjDgnqjxbm1QvSMSbxcg46Y/DkTuL56h6RpXM6ivSRHSP6cCVyVsm0Fa5cckPw9C3kHLoVsW7HKejJwGDjv2GYV8FBQz2yzynGsC8BIlT07tWip5F6x/RXBO383LPWum20cYdbVYtvpKmWnFO0reZ5bNlkLfkIyGcT34s98HnPsM1i8jLiQymSnEu3sycCIpQ8+KvUKbLkETnKuwT3bdvC6JEe5oXkmcMll2w5cZbtYipcmRQuQvAF4hYxpwbmXbiMxRceayf18AfaUkLyzxJNlspkdS3TsmdyPiU8vmhkqELwRuBRwmSeZ2TFEp5a8EBOh3gNOmJCoyI2His8ngfvAL8KJLjtUdKp2kQNR20iI6DZLji67rOguSI4qu4zoShb4mRE8Zl/RXZQcZew+orssOdiBVLRKDnQhEa2S/8fbiUu0Sl4aLze2jVSyG7Ej2wbJkqyWIXpct33v/C/VPcKMCPrxWSXXJVtncgWyVXKNbURRFEVRFEVRFEVRFEVRFEVRFGWg6/wD7sRajdPD5fUAAAAASUVORK5CYII="/>
+                        </defs>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
